@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique characters</title>
+    <style>
+        textarea{
+            height: 200px;
+             width: 600px;
+        }
+        #textcopy{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <h2>Enter a text</h2>
+    <div>
+        <textarea id="text"></textarea>
+    </div>
+    <button id="btn" onclick="show()">unique Character</button>
+    <div>
+        <textarea id="textcopy"></textarea>
+    </div>
+
+    <script>
+        function show() {
+            let unique = "";
+            var i = document.getElementById("text").value;
+            for (var j = 0; j < i.length; j++) {
+                if (unique.includes(i[j]) === false)
+                    unique += i[j];
+
+                document.getElementById("textcopy").innerText = unique;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

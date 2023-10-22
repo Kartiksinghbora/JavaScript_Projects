@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+
+<body>
+    <div>
+        <h2>Age Calculator</h2>
+    </div>
+    <div>
+        <input type="date" id="dat" />
+    </div>
+    <div>
+        <button onclick="btn()">submit</button>
+    </div>
+    <span>Age : </span><input type="text" id="show">
+
+    <script>
+        function btn() {
+            var dob = document.getElementById("dat").value;
+            var date1 = new Date();
+            var date2 = new Date(dob);
+
+            var dateDiff = date1.valueOf() - date2.valueOf();
+            if (dateDiff < 0) {
+                alert("enter date");
+            }
+
+            else {
+                var dateDiffInYears = dateDiff / 1000 / 60 / 60 / 24 / 365;
+                var st = parseInt(dateDiffInYears);
+                document.getElementById("show").value = st;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

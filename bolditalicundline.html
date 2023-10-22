@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bold Italic Underline</title>
+</head>
+
+<body>
+    <h2>Enter a text</h2>
+    <textarea id="inp" cols="70" rows="15"></textarea>
+    <br>
+
+    <button onclick="b()">Bold</button>
+    <button onclick="i()">Italic </button>
+    <button onclick="u()">Underline</button>
+    <br><br><br>
+
+    <textarea id="oup" cols="70" rows="15"></textarea>
+
+    <script>
+        flag = true;
+
+        function b() {
+            if (flag) {
+                let a = document.getElementById("inp").value;
+                document.getElementById("oup").innerHTML = a;
+                document.getElementById("oup").style.fontWeight = "bolder";
+            }
+            else {
+                document.getElementById("oup").style.fontWeight = "normal";
+            }
+            flag = !flag;
+        }
+
+
+        function i() {
+            if (flag) {
+                let a = document.getElementById("inp").value;
+                document.getElementById("oup").innerHTML = a;
+                document.getElementById("oup").style.fontStyle = "italic";
+            }
+            else {
+                document.getElementById("oup").style.fontStyle = "normal";
+            }
+            flag = !flag;
+        }
+
+        function u() {
+            if (flag) {
+                let a = document.getElementById("inp").value;
+                document.getElementById("oup").innerHTML = a;
+                document.getElementById("oup").style.textDecoration = "underline";
+            }
+            else {
+                document.getElementById("oup").style.textDecoration = "none";
+            }
+            flag = !flag;
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

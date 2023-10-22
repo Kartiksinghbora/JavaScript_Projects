@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkSheet</title>
+    <style>
+        tr,
+        td {
+            border: 2px solid black;
+        }
+    </style>
+
+    <script>
+        function calculate() {
+            let a = parseInt(document.getElementById("num1").value);
+            let b = parseInt(document.getElementById("num2").value);
+            let c = parseInt(document.getElementById("num3").value);
+            let d = parseInt(document.getElementById("num4").value);
+            let e = parseInt(document.getElementById("num5").value);
+            let f = parseInt(document.getElementById("num6").value);
+
+            var x = a + b + c + d + e + f;
+            document.getElementById("total").value = x;
+
+            var y = x / 6;
+            document.getElementById("percentage").value = y;
+
+            var z;
+            if (y > 94) {
+                z = 'A';
+                document.getElementById("grade").value = z;
+            }
+            else if (y > 80) {
+                z = 'B';
+                document.getElementById("grade").value = z;
+            }
+            else if (y > 60) {
+                z = 'C';
+                document.getElementById("grade").value = z;
+            }
+            else if (y > 45) {
+                z = 'D';
+                document.getElementById("grade").value = z;
+            }
+            else if (y > 33) {
+                z = 'E';
+                document.getElementById("grade").value = z;
+            }
+            else {
+                z = 'FAIL';
+                document.getElementById("grade").value = z;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Hindi</td>
+            <td><input type="text" id="num1" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td><input type="text" id="num2" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td>Maths</td>
+            <td><input type="text" id="num3" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td><input type="text" id="num4" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td>Art</td>
+            <td><input type="text" id="num5" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td>Computer</td>
+            <td><input type="text" id="num6" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><input type="text" id="total" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td>Percentage</td>
+            <td><input type="text" id="percentage" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td>Grade</td>
+            <td><input type="text" id="grade" style="width: 100px; margin-left: 10px;"> (Max : 100)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" id="cal" onclick="calculate()" value="Calculate"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

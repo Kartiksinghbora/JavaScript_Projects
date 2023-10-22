@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dollar 2 rupee</title>
+</head>
+
+<body>
+
+    <div class="heading">
+        <center>
+            <h2>82.06 Indian Rupee</h2>
+        </center>
+    </div>
+
+    <script>
+        function ret() {
+            let cur = 82.06;
+            let x = document.getElementById("dollar").value;
+            document.getElementById("rupee").value = x * cur;
+        }
+    </script>
+
+    <br>
+    <center> <input type="text" id="dollar" onfocusout="ret()" placeholder="enter dollar amount"> Dollar <center>
+            <br>
+            <center><input type="text" id="rupee" placeholder="Result"> Rupee </center>
+
+</body>
+
+</html>

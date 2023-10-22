@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapTheCase</title>
+</head>
+<body>
+    <div class="box"> 
+    <h2>Enter a text</h2>
+    <textarea id="inp" cols="70" rows="15"></textarea>
+    <br>
+
+    <button onclick="f()">Swap The Case </button>
+    <br><br><br>
+
+    <textarea id="oup" cols="70" rows="15"></textarea>
+
+</div>
+
+    <script>
+        function f() {
+            let result = '';
+            let ans = document.getElementById("inp").value;
+            for (var i = 0; i < ans.length; i++) {
+                if (ans[i] == ans[i].toUpperCase()) {
+                    result += ans[i].toLowerCase();
+                }
+                else {
+                    result += ans[i].toUpperCase();
+
+                }
+            }
+            document.getElementById("oup").innerText = result;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS 100 words</title>
+    <style>
+        .container {
+            height: 500px;
+            width: 500px;
+            border: 2px solid black;
+        }
+
+        .container div {
+            width: 100px;
+            height: 60px;
+            /* background-color: blue; */
+            color: black;
+            margin-left: 200px;
+            margin-bottom: 5px;
+            border: 2px solid black;
+            box-shadow:  2px 4px rgb(110, 107, 107);
+            font-size: 25px;
+        }
+
+        .container textarea {
+            height: 300px;
+            width: 450px;
+            margin-left: 22px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h4 style="text-align: center;">Way to SMS   (100 words limit)</h4>
+        <div id="timer"></div>
+
+        <textarea id="notes" onkeyup="show()"></textarea>
+    </div>
+
+    <script>
+        const a = 100;
+        window.onload = () => { document.getElementById("timer").innerHTML = a };
+
+
+        function show() {
+            var b;
+
+            let data = document.getElementById("notes").value;
+            b = a - data.length;
+
+            if (b < 0) {
+                b = 0;
+                document.getElementById("notes").value = data.substr(0, a - 1);
+            }
+
+            document.getElementById("timer").innerHTML = b;
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

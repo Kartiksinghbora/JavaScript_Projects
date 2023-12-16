@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qr code</title>
+    <link rel="icon" type="image/png"  href="icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .container {
+            background-color: aliceblue;
+            align-items: center;
+            border: 1px solid black;
+            width: 100%;
+            max-width: 500px;
+            margin: 100px auto 0;
+            height: auto;
+            padding: 10px 20px;
+            text-align: center;
+            align-content: center;
+        }
+
+
+
+        .container input {
+            width: 20em;
+            height: 2em;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 10px;
+            display: block;
+            margin-left: 100px;
+        }
+
+        button {
+            height: 3em;
+            width: 13em;
+            background-color: rgb(40, 40, 220);
+            border: 0;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #imgBox{
+            width: 200px;
+            margin-top: 10px;
+            margin-left: 130px;
+        }
+
+        /* #imgBox #imgg{
+            border: 1px solid rgb(40, 39, 39);
+            padding: 5px;
+            
+        } */
+
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <p>Enter you text to generate QR</p>
+        <input type="text" placeholder="enter here" id="text">
+
+        <div class="img" id="imgBox">
+            <img src=" " id="imgg">
+        </div>
+
+        <button id="btn1" onclick="generate()">Generate QR code</button>
+
+    </div>
+
+    <script>
+
+        const text = document.getElementById("text");
+        const imgBox = document.getElementById("imgBox");
+        const imgg = document.getElementById("imgg");
+
+        function generate() {
+
+            if(text.value.length > 0){
+                imgg.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + text.value;
+            }
+            else{
+                alert("Enter any text, your textbox is empty");
+            }
+            
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
